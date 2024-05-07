@@ -1,0 +1,37 @@
+name: Scheduled update
+
+on:
+  schedule
+  - cron: "*/15 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v2
+        with:
+          path: "requirements.txt"
+
+      - name: Exec python script
+        run: python parser.py > commands
+
+      - name: Commit Files
+        run: |
+          git config --local user.name paolomeraviglia
+          git config --local user.email "aixammimation@gmail.com"
+          git add --all
+          git commit -am "GH ACTION Headlines $(date)"
+          git push otigin main
+        env:
+          REPO_KEY: ${{secrets.GITHUB_TOKEN}}
+          username: github-actions
