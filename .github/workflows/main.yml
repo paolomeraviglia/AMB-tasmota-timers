@@ -29,27 +29,15 @@ jobs:
         with:
           path: "requirements.txt"
 
-      - name: Delete old command file
-        run: rm commands
+      - name: Exec python script
+        run: python parser.py > commands
 
       - name: Commit Files
         run: |
           git config --local user.name paolomeraviglia
           git config --local user.email "aixammimation@gmail.com"
           git add --all
-          git commit -am "Commands deleted on $(date)"
-          git push origin main
-        env:
-          REPO_KEY: ${{secrets.GITHUB_TOKEN}}
-          username: github-actions
-
-      - name: Exec python script
-        run: python parser.py > commands
-
-      - name: Commit Files
-        run: |
-          git add --all
-          git commit -am "Commands updated on $(date)"
+          git diff --quiet && git diff --staged --quiet || git commit -am "Commands updated on $(date)"
           git push origin main
         env:
           REPO_KEY: ${{secrets.GITHUB_TOKEN}}
