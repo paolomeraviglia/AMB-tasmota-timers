@@ -33,7 +33,7 @@ jobs:
           git config --local user.email "aixammimation@gmail.com"
           git add --all
           git commit -am "GH ACTION Headlines $(date)"
-          git push otigin main
+          git push origin main
         env:
           REPO_KEY: ${{secrets.GITHUB_TOKEN}}
           username: github-actions
