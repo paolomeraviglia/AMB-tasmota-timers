@@ -1,13 +1,13 @@
 Timers 1
 Time 0
 Backlog Latitude 47.4133024; Longitude 8.656394; TimeDST 0,0,3,1,1,120; TimeSTD 0,0,10,1,1,60; TimeZone 99
-Timer1{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"0100000","Repeat":0,"Output":1,"Action":1}
-Timer2{"Enable":1,"Mode":0,"Time":"06:00","Window":0,"Days":"0100000","Repeat":0,"Output":1,"Action":0}
-Timer3{"Enable":1,"Mode":0,"Time":"19:30","Window":0,"Days":"0100000","Repeat":0,"Output":1,"Action":1}
-Timer4{"Enable":1,"Mode":0,"Time":"05:45","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":0}
-Timer5{"Enable":1,"Mode":0,"Time":"16:00","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":1}
-Timer6{"Enable":1,"Mode":0,"Time":"19:00","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":0}
-Timer7{"Enable":1,"Mode":0,"Time":"22:45","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":1}
+Timer1{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":1}
+Timer2{"Enable":1,"Mode":0,"Time":"05:45","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":0}
+Timer3{"Enable":1,"Mode":0,"Time":"16:00","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":1}
+Timer4{"Enable":1,"Mode":0,"Time":"19:00","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":0}
+Timer5{"Enable":1,"Mode":0,"Time":"22:45","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":1}
+Timer6{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
+Timer7{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
 Timer8{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
 Timer9{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
 Timer10{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
