@@ -7,7 +7,7 @@ from urllib import parse
 fileCommand = open("commands", "w")
 fileBerry = open("berry.be", "w")
 fileNonBerry = open("non-berry", "w")
-
+fileTotalData = open("all-parsed-datas", "w")
 
 endpoint = f"https://www.amb.ch/Umbraco/Api/HivePower/GetChartData/"
 today = datetime.today()
@@ -37,7 +37,9 @@ r = requests.post(
 data = r.json()
 
 total = numpy.vstack((total,numpy.stack((data["labels"], data["bgColors"]), axis=1 )))
+fileTotalData.write(total)
 
+#here starts conversion logic
 i = 0
 value = None
 reduction = []
@@ -104,5 +106,6 @@ fileBerry.write(berry)
 fileNonBerry.close()
 fileBerry.close()
 fileCommand.close()
+fileTotalData.close()
 #print(output)
 #print(berry)
