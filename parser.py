@@ -36,7 +36,7 @@ r = requests.post(
 data = r.json()
 
 total = numpy.vstack((total,numpy.stack((data["labels"], data["bgColors"]), axis=1 )))
-numpy.save(all-parsed-datas,total)
+numpy.save("all-parsed-datas.npy",total)
 
 #here starts conversion logic
 i = 0
