@@ -7,9 +7,8 @@ from urllib import parse
 fileCommand = open("commands", "w")
 fileBerry = open("berry.be", "w")
 fileNonBerry = open("non-berry", "w")
-fileTotalData = open("all-parsed-datas", "rb")
 
-total = fileTotalData.read()
+total = numpy.load("all-parsed-datas.npy")
 
 #here starts conversion logic
 i = 0
