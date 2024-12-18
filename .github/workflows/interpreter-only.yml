@@ -1,0 +1,44 @@
+name: Interpreter Only Update
+
+on:
+  schedule:
+    - cron: '0,15,30,45 * * * *'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Datetime set
+        uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "Europe/Rome"
+          
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5.1.0
+        with:
+          python-version: 3.11
+
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4.1.0
+        with:
+          path: "requirements.txt"
+
+      - name: Exec python script
+        run: python interpreter.py
+
+      - name: Commit Files
+        run: |
+          git config --local user.name paolomeraviglia
+          git config --local user.email "aixammimation@gmail.com"
+          git add --all
+          git diff --quiet && git diff --staged --quiet || git commit -am "Commands updated on $(date)"
+          git push origin main
+        env:
+          REPO_KEY: ${{secrets.GITHUB_TOKEN}}
+          username: github-actions
