@@ -55,7 +55,7 @@ i=1
 
 status = None
 
-berry = f"# Berry code starts here"
+berry = f"# Berry code starts here \n var status = 0"
 output = f"Timers 1"
 output += f'\n'+f"Time 0"
 output += f'\n'+f"Backlog Latitude 47.4133024; Longitude 8.656394; TimeDST 0,0,3,1,1,120; TimeSTD 0,0,10,1,1,60; TimeZone 99"
@@ -84,7 +84,7 @@ for key in reduction:
             raise Exception(f"Value not valid, please contact the developer, wrong weekday value:"+str(day))
     output += f'\n'+f'Timer{i}'+'{"Enable":1,"Mode":0,"Time":"'+time+'","Window":0,"Days":"'+daystring+'","Repeat":0,"Output":1,"Action":'+str(key[1])+'}'
     i=i+1
-    berry += f'\n'+f'if '+str(key[0])+f' <= tasmota.rtc(local) tasmota.cmd(Power1 '+str(key[1])+f') end'
+    berry += f'\n'+f'if '+str(key[0])+f' <= tasmota.rtc(local) status = '+str(key[1])+f' end'
 
 while i < 17:
     output += f'\n'+f'Timer{i}'+'{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}'
@@ -92,5 +92,6 @@ while i < 17:
 
 
 output += f'\n'+f'Power1 '+str(status)
+berry += f'\n'+f'if status == 0 tasmota.cmd(Power1 0) else tasmota.cmd(Power1 1) end'
 print(output)
 print(berry)
