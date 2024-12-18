@@ -4,6 +4,11 @@ from datetime import datetime, timedelta
 from dateutil import tz
 from urllib import parse
 
+file-command = open("command", "w")
+file-berry = open("berry.be", "w")
+file-non-berry = open("non-berry", "w")
+
+
 endpoint = f"https://www.amb.ch/Umbraco/Api/HivePower/GetChartData/"
 today = datetime.today()
 tomorrow = today + timedelta(days=1)
@@ -91,7 +96,13 @@ while i < 17:
     i=i+1
 
 
-output += f'\n'+f'Power1 '+str(status)
 berry += f'\n'+f'if status == 0 tasmota.cmd(Power1 0) else tasmota.cmd(Power1 1) end'
-print(output)
-print(berry)
+file-command.write(output)
+output += f'\n'+f'Power1 '+str(status)
+file-non-berry.write(output)
+file-berry.write(berry)
+file-non-berry.close()
+file-berry.close()
+file-command.close()
+#print(output)
+#print(berry)
