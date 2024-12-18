@@ -1,4 +1,4 @@
-name: Scheduled update
+name: Scheduled Download from AMB Servers
 
 on:
   schedule:
