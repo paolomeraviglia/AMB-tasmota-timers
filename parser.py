@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from dateutil import tz
 from urllib import parse
 
-fileCommand = open("command", "w")
+fileCommand = open("commands", "w")
 fileBerry = open("berry.be", "w")
 fileNonBerry = open("non-berry", "w")
 
@@ -60,7 +60,7 @@ i=1
 
 status = None
 
-berry = f"# Berry code starts here \n var status = 0"
+berry = f"# Berry code starts here \nvar status = 0"
 output = f"Timers 1"
 output += f'\n'+f"Time 0"
 output += f'\n'+f"Backlog Latitude 47.4133024; Longitude 8.656394; TimeDST 0,0,3,1,1,120; TimeSTD 0,0,10,1,1,60; TimeZone 99"
