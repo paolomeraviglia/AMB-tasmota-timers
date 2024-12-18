@@ -7,7 +7,7 @@ from urllib import parse
 fileCommand = open("commands", "w")
 fileBerry = open("berry.be", "w")
 fileNonBerry = open("non-berry", "w")
-fileTotalData = open("all-parsed-datas", "w")
+fileTotalData = open("all-parsed-datas", "wb")
 
 endpoint = f"https://www.amb.ch/Umbraco/Api/HivePower/GetChartData/"
 today = datetime.today()
