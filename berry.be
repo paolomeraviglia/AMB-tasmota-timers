@@ -1,5 +1,5 @@
 # Berry code starts here 
- var status = 0
+var status = 0
 if 1734476400 <= tasmota.rtc(local) status = 1 end
 if 1734497100 <= tasmota.rtc(local) status = 0 end
 if 1734536700 <= tasmota.rtc(local) status = 1 end
