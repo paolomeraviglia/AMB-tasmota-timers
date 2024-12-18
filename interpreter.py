@@ -8,6 +8,12 @@ fileCommand = open("commands", "w")
 fileBerry = open("berry.be", "w")
 fileNonBerry = open("non-berry", "w")
 
+today = datetime.today()
+tomorrow = today + timedelta(days=1)
+payload_today = {"date": today.strftime('%Y-%m-%d')}
+payload_tomorrow = {"date": tomorrow.strftime('%Y-%m-%d')}
+local_tz = tz.gettz('Europe/Rome')
+
 total = numpy.load("all-parsed-datas.npy")
 
 #here starts conversion logic
