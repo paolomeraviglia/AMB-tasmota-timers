@@ -30,7 +30,7 @@ jobs:
           path: "requirements.txt"
 
       - name: Exec python script
-        run: python parser.py > commands
+        run: python parser.py
 
       - name: Commit Files
         run: |
