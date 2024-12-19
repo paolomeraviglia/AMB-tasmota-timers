@@ -2,7 +2,7 @@ name: Scheduled Download from AMB Servers
 
 on:
   schedule:
-    - cron: '5 * * * *'
+    - cron: '59 1-23/2 * * *'
 
   workflow_dispatch:
 
