@@ -75,7 +75,7 @@ while i < 17:
     i=i+1
 
 
-berry += f'\n'+f'if status == 0 tasmota.cmd(Power1 0) else tasmota.cmd(Power1 1) end'
+berry += f'\n'+f'if status == 0 tasmota.cmd("Power1 0") else tasmota.cmd("Power1 1") end'
 fileCommand.write(output)
 output += f'\n'+f'Power1 '+str(status)
 fileNonBerry.write(output)
