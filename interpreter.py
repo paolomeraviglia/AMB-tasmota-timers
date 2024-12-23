@@ -68,7 +68,7 @@ for key in reduction:
             raise Exception(f"Value not valid, please contact the developer, wrong weekday value:"+str(day))
     output += f'\n'+f'Timer{i}'+'{"Enable":1,"Mode":0,"Time":"'+time+'","Window":0,"Days":"'+daystring+'","Repeat":0,"Output":1,"Action":'+str(key[1])+'}'
     i=i+1
-    berry += f'\n'+f'if '+str(key[0])+f' <= tasmota.rtc(local) status = '+str(key[1])+f' end'
+    berry += f'\n'+f'if '+str(key[0])+f' <= tasmota.rtc("local") status = '+str(key[1])+f' end'
 
 while i < 17:
     output += f'\n'+f'Timer{i}'+'{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}'
