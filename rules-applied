@@ -1,0 +1,9 @@
+generic rules applied:
+
+rule1 ON Wifi#connected DO Backlog Urlfetch https://raw.githubusercontent.com/paolomeraviglia/AMB-tasmota-timers/main/commands; UfsRun commands; Urlfetch https://raw.githubusercontent.com/paolomeraviglia/AMB-tasmota-timers/main/berry.be; Br load("berry.be"); ENDON
+rule1 On
+
+When need to disable, only update clock timing over NTP forcefully
+
+rule2 ON WIFI#CONNECTED DO backlog time 0; ENDON
+rule2 Off
