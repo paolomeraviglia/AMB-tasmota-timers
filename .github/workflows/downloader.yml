@@ -2,7 +2,7 @@ name: Scheduled Download from AMB Servers
 
 on:
   schedule:
-    - cron: '59 1-23/2 * * *'
+    - cron: '5 */4 * * *'
 
   workflow_dispatch:
 
@@ -37,7 +37,7 @@ jobs:
           git config --local user.name paolomeraviglia
           git config --local user.email "aixammimation@gmail.com"
           git add --all
-          git diff --quiet && git diff --staged --quiet || git commit -am "Commands updated on $(date)"
+          git diff --quiet && git diff --staged --quiet || git commit -am "Data downloaded on $(date)"
           git push origin main
         env:
           REPO_KEY: ${{secrets.GITHUB_TOKEN}}
