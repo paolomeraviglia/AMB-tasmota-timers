@@ -68,7 +68,7 @@ output += f'\n'+f"Backlog Latitude 47.4133024; Longitude 8.656394; TimeDST 0,0,3
 for key in reduction:
     if i!=1:
         dt = datetime.fromtimestamp(int(key[0])-900)
-    else
+    else:
         dt = datetime.fromtimestamp(int(key[0]))
     time=dt.strftime('%H:%M')
     day=dt.weekday()
