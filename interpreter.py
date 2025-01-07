@@ -51,7 +51,7 @@ reduction = []
 for key in total: 
     total[i][1]=colorMatch(total[i][1])
     dt=datetime.strptime(total[i][0],'%Y-%m-%dT%H:%M:%S%z')
-    total[i][0]=int(dt.replace(tzinfo=local_tz).timestamp())
+    total[i][0]=int(dt.replace(tzinfo=local_tz).timestamp())-900
     if value != total[i][1]:
         reduction.append([total[i][0],total[i][1]])
         value = total[i][1]
