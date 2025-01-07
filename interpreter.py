@@ -76,7 +76,7 @@ for key in reduction:
     berry += f'\n'+f'if '+str(key[0])+f' <= tasmota.rtc("utc") status = '+str(key[1])+f' end'
 
 if i < 17:
-    if day == 6:
+    if day == 2:
         day = int(-1)
     output += f'\n'+f'Timer{i}'+'{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"'+dayMatch(day+1)+'","Repeat":0,"Output":1,"Action":0}'
         
