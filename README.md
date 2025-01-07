@@ -11,7 +11,7 @@ Script written in python that would:
 - berry.be: updating what should be the ```Power1``` status according to the current timers and fares for tasmota32 devices. Executed and interpreted on the device directly</p>
 - non-berry: setting ```Power1``` status statically server side. For tasmota and tasmota32 devices, but please take note you should execute the interpreter every 15 minutes or the status could be not correct according to the rules.
 
-<p>my recommendation is to use only on tasmota32 with commands and berry.be scripts, like reported in ```rules-applied.md```</p>
+<br>my recommendation is to use only on tasmota32 with commands and berry.be scripts, as reported in ```rules-applied.md```.
  
 please use:
 -  non-berry for common tasmota device to update timers and also update the current status of the relay
@@ -28,3 +28,9 @@ running the downloader.py will produce ```all-parsed-data.npy``` file, that will
 Please note that the info regarding timezone for the tasmotas are hardcoded in ```interpreter.py``` and are considering UTC for berry scripts, and local timezone for common commands.
 
 I am using this files in a place without costant wifi coverage, triggering that according to the rule1 reported in ```rules-applied.md```
+
+------------
+
+Hack and caveats:
+<h2>- Time reported on semaforino 2.0 and on the app is shifted by 15 minutes compared to the APIs</h2>
+to fix this, during the calculations i simply report datas with a delta of 15 minutes except for timer1, that will everytime report the midnight for the current day.
