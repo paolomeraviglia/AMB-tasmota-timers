@@ -4,6 +4,34 @@ from datetime import datetime, timedelta
 from dateutil import tz
 from urllib import parse
 
+def colorMatch(color):
+    match color:
+        case "#05DA3A":
+            return 1
+        case "#E3051B":
+            return 0
+        case _:
+            raise Exception(f"Value not valid, please contact the developer, exit value:"+color)
+
+def dayMatch(day):
+    match day:
+        case 6:
+            return f"1000000"
+        case 0:
+            return f"0100000"
+        case 1:
+            return f"0010000"
+        case 2:
+            return f"0001000"
+        case 3:
+            return f"0000100"
+        case 4:
+            return f"0000010"
+        case 5:
+            return f"0000001"
+        case _:
+            raise Exception(f"Value not valid, please contact the developer, wrong weekday value:"+str(day))
+
 fileCommand = open("commands", "w")
 fileBerry = open("berry.be", "w")
 fileNonBerry = open("non-berry", "w")
@@ -21,13 +49,7 @@ i = 0
 value = None
 reduction = []
 for key in total: 
-    match total[i][1]:
-        case "#05DA3A":
-            total[i][1] = 1
-        case "#E3051B":
-            total[i][1] = 0
-        case _:
-            raise Exception(f"Value not valid, please contact the developer, exit value:"+total[i][1])
+    total[i][1]=colorMatch(total[i][1])
     dt=datetime.strptime(total[i][0],'%Y-%m-%dT%H:%M:%S%z')
     total[i][0]=int(dt.replace(tzinfo=local_tz).timestamp())
     if value != total[i][1]:
@@ -49,27 +71,15 @@ for key in reduction:
     day=dt.weekday()
     if int(key[0]) <= int(today.timestamp()):
         status = int(key[1])
-    match day:
-        case 6:
-            daystring = "1000000"
-        case 0:
-            daystring = "0100000"
-        case 1:
-            daystring = "0010000"
-        case 2:
-            daystring = "0001000"
-        case 3:
-            daystring = "0000100"
-        case 4:
-            daystring = "0000010"
-        case 5:
-            daystring = "0000001"
-        case _:
-            raise Exception(f"Value not valid, please contact the developer, wrong weekday value:"+str(day))
-    output += f'\n'+f'Timer{i}'+'{"Enable":1,"Mode":0,"Time":"'+time+'","Window":0,"Days":"'+daystring+'","Repeat":0,"Output":1,"Action":'+str(key[1])+'}'
+    output += f'\n'+f'Timer{i}'+'{"Enable":1,"Mode":0,"Time":"'+time+'","Window":0,"Days":"'+dayMatch(day)+'","Repeat":0,"Output":1,"Action":'+str(key[1])+'}'
     i=i+1
     berry += f'\n'+f'if '+str(key[0])+f' <= tasmota.rtc("utc") status = '+str(key[1])+f' end'
 
+if i < 17:
+    if day == 6
+        day = int(-1)
+    output += f'\n'+f'Timer{i}'+'{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"'+dayMatch(day+1)+'","Repeat":0,"Output":1,"Action":0}'
+        
 while i < 17:
     output += f'\n'+f'Timer{i}'+'{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}'
     i=i+1
