@@ -66,10 +66,9 @@ output = f"Timers 1"
 output += f'\n'+f"Time 0"
 output += f'\n'+f"Backlog Latitude 47.4133024; Longitude 8.656394; TimeDST 0,0,3,1,1,120; TimeSTD 0,0,10,1,1,60; TimeZone 99"
 for key in reduction:
-    if i!=1 and not int(key[1]):
-        dt = datetime.fromtimestamp(int(key[0])-900)
-    else:
-        dt = datetime.fromtimestamp(int(key[0]))
+    if i!=1:
+        key[0]=key[0]-900
+    dt = datetime.fromtimestamp(int(key[0]))
     time=dt.strftime('%H:%M')
     day=dt.weekday()
     if int(key[0]) <= int(today.timestamp()):
