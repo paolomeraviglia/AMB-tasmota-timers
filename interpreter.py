@@ -53,7 +53,7 @@ for key in total:
     dt=datetime.strptime(total[i][0],'%Y-%m-%dT%H:%M:%S%z')
     total[i][0]=int(dt.replace(tzinfo=local_tz).timestamp())
     if value != total[i][1]:
-        reduction.append([total[i][0],total[i][1]])
+        reduction.append([int(total[i][0]),int(total[i][1])])
         value = total[i][1]
     i=i+1;
 
