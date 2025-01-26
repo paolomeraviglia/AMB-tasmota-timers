@@ -81,6 +81,7 @@ if i < 17:
     if day == 6:
         day = int(-1)
     output += f'\n'+f'Timer{i}'+'{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"'+dayMatch(day+1)+'","Repeat":0,"Output":1,"Action":0}'
+    i=i+1
         
 while i < 17:
     output += f'\n'+f'Timer{i}'+'{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}'
