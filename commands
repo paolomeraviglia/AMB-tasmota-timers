@@ -4,11 +4,11 @@ Backlog Latitude 47.4133024; Longitude 8.656394; TimeDST 0,0,3,1,1,120; TimeSTD 
 Timer1{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"0000001","Repeat":0,"Output":1,"Action":1}
 Timer2{"Enable":1,"Mode":0,"Time":"10:15","Window":0,"Days":"0000001","Repeat":0,"Output":1,"Action":0}
 Timer3{"Enable":1,"Mode":0,"Time":"22:45","Window":0,"Days":"0000001","Repeat":0,"Output":1,"Action":1}
-Timer4{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"1000000","Repeat":0,"Output":1,"Action":0}
-Timer5{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
-Timer6{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
-Timer7{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
-Timer8{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
+Timer4{"Enable":1,"Mode":0,"Time":"07:45","Window":0,"Days":"1000000","Repeat":0,"Output":1,"Action":0}
+Timer5{"Enable":1,"Mode":0,"Time":"12:15","Window":0,"Days":"1000000","Repeat":0,"Output":1,"Action":1}
+Timer6{"Enable":1,"Mode":0,"Time":"17:30","Window":0,"Days":"1000000","Repeat":0,"Output":1,"Action":0}
+Timer7{"Enable":1,"Mode":0,"Time":"20:45","Window":0,"Days":"1000000","Repeat":0,"Output":1,"Action":1}
+Timer8{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"0100000","Repeat":0,"Output":1,"Action":0}
 Timer9{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
 Timer10{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
 Timer11{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
