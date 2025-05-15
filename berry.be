@@ -3,4 +3,8 @@ var status = 0
 if 1747260000 <= tasmota.rtc("utc") status = 1 end
 if 1747289700 <= tasmota.rtc("utc") status = 0 end
 if 1747336500 <= tasmota.rtc("utc") status = 1 end
+if 1747368900 <= tasmota.rtc("utc") status = 0 end
+if 1747404000 <= tasmota.rtc("utc") status = 1 end
+if 1747414800 <= tasmota.rtc("utc") status = 0 end
+if 1747426500 <= tasmota.rtc("utc") status = 1 end
 if status == 0 tasmota.cmd("Power1 0") else tasmota.cmd("Power1 1") end
