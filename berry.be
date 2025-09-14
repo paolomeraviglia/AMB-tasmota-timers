@@ -5,4 +5,8 @@ if 1757811600 <= tasmota.rtc("utc") status = 0 end
 if 1757823300 <= tasmota.rtc("utc") status = 1 end
 if 1757865600 <= tasmota.rtc("utc") status = 0 end
 if 1757880000 <= tasmota.rtc("utc") status = 1 end
+if 1757898900 <= tasmota.rtc("utc") status = 0 end
+if 1757923200 <= tasmota.rtc("utc") status = 1 end
+if 1757941200 <= tasmota.rtc("utc") status = 0 end
+if 1757970000 <= tasmota.rtc("utc") status = 1 end
 if status == 0 tasmota.cmd("Power1 0") else tasmota.cmd("Power1 1") end
