@@ -5,11 +5,11 @@ Timer2{"Enable":1,"Mode":0,"Time":"04:00","Window":0,"Days":"0100000","Repeat":0
 Timer3{"Enable":1,"Mode":0,"Time":"12:30","Window":0,"Days":"0100000","Repeat":0,"Output":1,"Action":1}
 Timer4{"Enable":1,"Mode":0,"Time":"16:00","Window":0,"Days":"0100000","Repeat":0,"Output":1,"Action":0}
 Timer5{"Enable":1,"Mode":0,"Time":"22:15","Window":0,"Days":"0100000","Repeat":0,"Output":1,"Action":1}
-Timer6{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":0}
-Timer7{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
-Timer8{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
-Timer9{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
-Timer10{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
+Timer6{"Enable":1,"Mode":0,"Time":"05:00","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":0}
+Timer7{"Enable":1,"Mode":0,"Time":"12:30","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":1}
+Timer8{"Enable":1,"Mode":0,"Time":"15:30","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":0}
+Timer9{"Enable":1,"Mode":0,"Time":"22:45","Window":0,"Days":"0010000","Repeat":0,"Output":1,"Action":1}
+Timer10{"Enable":1,"Mode":0,"Time":"00:00","Window":0,"Days":"0001000","Repeat":0,"Output":1,"Action":0}
 Timer11{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
 Timer12{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
 Timer13{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}
