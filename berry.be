@@ -1,10 +1,6 @@
 # Berry code starts here 
 var status = 0
-if 1779487200 <= tasmota.rtc("utc") status = 1 end
-if 1779498000 <= tasmota.rtc("utc") status = 0 end
-if 1779529500 <= tasmota.rtc("utc") status = 1 end
-if 1779545700 <= tasmota.rtc("utc") status = 0 end
-if 1779570000 <= tasmota.rtc("utc") status = 1 end
+if 1779573600 <= tasmota.rtc("utc") status = 1 end
 if 1779585300 <= tasmota.rtc("utc") status = 0 end
 if 1779601500 <= tasmota.rtc("utc") status = 1 end
 if 1779635700 <= tasmota.rtc("utc") status = 0 end
