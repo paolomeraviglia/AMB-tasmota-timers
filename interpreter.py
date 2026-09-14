@@ -35,6 +35,7 @@ def dayMatch(day):
 fileCommand = open("commands", "w")
 fileBerry = open("berry.be", "w")
 fileNonBerry = open("non-berry", "w")
+fileHomeAssistant = open("HomeAssistant", "w")
 
 today = datetime.today()
 tomorrow = today + timedelta(days=1)
@@ -60,6 +61,7 @@ for key in total:
 i=1
 
 status = None
+ha_events = []
 
 berry = f"# Berry code starts here \nvar status = 0"
 output = f"Timers 1"
@@ -76,6 +78,11 @@ for key in reduction:
     output += f'\n'+f'Timer{i}'+'{"Enable":1,"Mode":0,"Time":"'+time+'","Window":0,"Days":"'+dayMatch(day)+'","Repeat":0,"Output":1,"Action":'+str(key[1])+'}'
     i=i+1
     berry += f'\n'+f'if '+str(key[0])+f' <= tasmota.rtc("utc") status = '+str(key[1])+f' end'
+    event = {
+	"time" : key[0],
+        "state" : key[1]
+    }
+    ha_events.append(event)
 
 if i < 17:
     if day == 6:
@@ -87,8 +94,14 @@ while i < 17:
     output += f'\n'+f'Timer{i}'+'{"Enable":0,"Mode":0,"Time":"00:00","Window":0,"Days":"0000000","Repeat":0,"Output":1,"Action":0}'
     i=i+1
 
+ha_events = {
+   "events": ha_events
+}
 
 berry += f'\n'+f'if status == 0 tasmota.cmd("Power1 0") else tasmota.cmd("Power1 1") end'
+
+fileHomeAssistant.write(json.dumps(ha_events))
+fileHomeAssistant.close()
 fileCommand.write(output)
 stringNonBerry = f'Power1 '+str(status)
 fileNonBerry.write(stringNonBerry)
@@ -98,3 +111,4 @@ fileBerry.close()
 fileCommand.close()
 #print(output)
 #print(berry)
+#print(json.dumps(ha_events))
