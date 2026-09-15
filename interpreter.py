@@ -79,8 +79,8 @@ for key in reduction:
     i=i+1
     berry += f'\n'+f'if '+str(key[0])+f' <= tasmota.rtc("utc") status = '+str(key[1])+f' end'
     event = {
-	"time" : key[0],
-        "state" : key[1]
+	    "time" : key[0],
+        "state" : "Low_Fare" if key[1] else "High_Fare"
     }
     ha_events.append(event)
 
