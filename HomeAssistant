@@ -1,1 +1,1 @@
-{"events": [{"time": 1792970100, "state": "Low_Fare"}, {"time": 1792990800, "state": "High_Fare"}, {"time": 1793048400, "state": "Low_Fare"}, {"time": 1793076300, "state": "High_Fare"}, {"time": 1793088900, "state": "Low_Fare"}, {"time": 1793113200, "state": "High_Fare"}, {"time": 1793137500, "state": "Low_Fare"}]}
+{"events": [{"time": 1793055600, "state": "Low_Fare"}, {"time": 1793076300, "state": "High_Fare"}, {"time": 1793088900, "state": "Low_Fare"}, {"time": 1793113200, "state": "High_Fare"}, {"time": 1793137500, "state": "Low_Fare"}]}
