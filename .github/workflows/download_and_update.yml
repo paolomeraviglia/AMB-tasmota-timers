@@ -1,4 +1,4 @@
-name: Scheduled Download from AMB Servers
+name: Download from AMB Servers and update repo
 
 on:
   schedule:
